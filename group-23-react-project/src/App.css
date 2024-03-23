@@ -104,3 +104,48 @@
   border: 1px solid grey;
   padding-left: 8px;
 }
+
+.underclassmen, .upperclassmen, .semestersBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.year{
+  flex: 1;
+  padding: 5%;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+
+.course{
+  font-size: 10px;
+  margin-top: 50px;
+  border: 10px solid transparent;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course:hover {
+  background-color: white;
+  border: 10px solid white;
+  color: black;
+}
+
+.semester {
+  padding: 5%;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.semestertitle {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
