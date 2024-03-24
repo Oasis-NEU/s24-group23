@@ -21,6 +21,7 @@ function Inputs() {
     const handleSubmit = () => {
         console.log(`Submitted Major: ${selectedMajor}`);
         getMajorLink(selectedMajor);
+        makeRequest();
     };
 
     return (
@@ -41,6 +42,14 @@ function getMajorLink(major: string): string {
     const link = majors.get(major);
     console.log(link);
     return link || '';
+}
+
+function makeRequest() {
+    fetch("/src/assets/computer-science-bs-reqs-html.txt").then(
+		response => response.text()
+	).then(
+		json => console.log(json)
+	)
 }
 
 export default Inputs;
