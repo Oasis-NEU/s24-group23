@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
-import { parse, stringify } from 'html-parse-string';
+import React, { useEffect, useState } from 'react';
+import { IDom, parse, stringify } from 'html-parse-string';
+import csRequirements from '../assets/cs-requirements';
 import '../App.css';
 
 const majors = new Map([
@@ -12,7 +13,7 @@ const majors = new Map([
 function Inputs() {
     const [selectedMajor, setSelectedMajor] = useState('');
 
-    
+    console.log(csRequirements);
 
     const handleMajorChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedMajor(event.target.value);
@@ -21,7 +22,7 @@ function Inputs() {
     const handleSubmit = () => {
         console.log(`Submitted Major: ${selectedMajor}`);
         getMajorLink(selectedMajor);
-        makeRequest();
+        window.location.href = '/';
     };
 
     return (
@@ -44,12 +45,5 @@ function getMajorLink(major: string): string {
     return link || '';
 }
 
-function makeRequest() {
-    fetch("/src/assets/computer-science-bs-reqs-html.txt").then(
-		response => response.text()
-	).then(
-		json => console.log(json)
-	)
-}
 
 export default Inputs;
